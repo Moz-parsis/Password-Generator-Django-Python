@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center p-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-4">Password Generator</span>
+          </a>
+    
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="{url 'home' %}" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="https://github.com/Moz-parsis/Password-Generator-Django-Python" class="nav-link">GitHub Code</a></li>
+            <li class="nav-item"><a href="{url 'about' %}" class="nav-link">About Us</a></li>
+          </ul>
+        </header>
+      </div>
+      <div class="px-4 pb-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://sagartamang0000.files.wordpress.com/2023/01/longsword-bascinet-surcoat-1200.jpg" alt="" width="72" height="57">
+        <h1 class="display-5 fw-bold text-body-emphasis">Welcome to the PyPassword Generator!</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Enter the below values.</p>
+        </div>
+        <form action="{% url 'generate' %}" method="get">
+          <div class="mb-3">
+            <label for="num_letters" class="form-label">How many letters would you like in your password?</label>
+            <input type="number" class="form-control" id="num_letters" name="letters">
+          </div>
+          <div class="mb-3">
+            <label for="num_symbols" class="form-label">How many symbols would you like?</label>
+            <input type="number" class="form-control" id="num_symbols" name="symbols">
+          </div>
+          <div class="mb-3">
+            <label for="num_numbers" class="form-label">How many numbers would you like?</label>
+            <input type="number" class="form-control" id="num_numbers" name="numbers">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">GENERATE</button>
+        </form>
+        
+      </div>
+
+{% endblock %}
