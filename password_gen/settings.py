@@ -117,13 +117,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'passgen/static/'
+STATIC_URL = '/static/'
 print('static url:', STATIC_URL)
 STATICFILES_DIR = [
-   os.path.join(BASE_DIR, 'passgen/static'), #Folder where you have stored your index.html's required folders
+   os.path.join(BASE_DIR, 'passgen', 'static'), #Folder where you have stored your index.html's required folders
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') #Giving a name as we prefer (Eg: static or assets)
-
+print('BASE: ', BASE_DIR)
+print('STATIC_ROOT: ', STATIC_ROOT)
+print('STATICFILES_DIR: ', STATICFILES_DIR)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
